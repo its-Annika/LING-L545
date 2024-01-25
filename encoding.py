@@ -20,9 +20,9 @@ for line in lines:
 	cleanLine = ""
 	for character in line:
 		if unicodedata.category(character) == 'Fs':
-			invalid[ord(character)] += 1
+			invalid[unicodedata.name(character)] += 1
 		elif unicodedata.category(character) == 'Zs' and character != " " and character != "\n":
-			invalid[ord(character)] += 1
+			invalid[unicodedata.name(character)] += 1
 			cleanLine += " " 
 		else:
 			cleanLine += character
