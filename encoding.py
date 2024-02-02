@@ -28,9 +28,9 @@ for line in lines:
 			cleanLine += character
 
 	#replaces invalid characters that are not spaces
-	if re.search("[^a-zA-ZäÄöÖüÜß!;.?\"\'\s]", cleanLine):
+	if re.search("[^a-zA-ZäÄöÖüÜß!;.?\"\'\s1234567890]", cleanLine):
 		for character in cleanLine:
-			if re.match("[^a-zA-ZäÄöÖüÜß!;.?\"\'\s]", character):
+			if re.match("[^a-zA-ZäÄöÖüÜß!;.?\"\'\s1234567890]", character):
 				invalid[character] += 1
 		
 			
