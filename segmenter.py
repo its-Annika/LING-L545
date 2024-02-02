@@ -29,7 +29,7 @@ while line:
 
 			#dates & numbers
 			#if you've found a number, which is not a year
-			elif re.match("[1234567890\.]", token) and not re.match("[12][1234567890][1234567890][1234567890][\.]", token):
+			elif re.match("[\.]*[1234567890][\.]*", token) and not re.match("[12][1234567890][1234567890][1234567890][\.]", token):
 				sys.stdout.write(token + ' ')
 
 			else:
