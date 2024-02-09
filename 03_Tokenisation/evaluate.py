@@ -30,11 +30,6 @@ storage.append(["original","actual","predicted","match?"])
 counter = 0
 for i in range(totalPossible):
 
-	print(originals[i])
-	print(results[i])
-	print(target[i])
-	print("####")
-
 	match = "not a match"
 	if re.match(results[i], target[i]):
 		counter += 1
@@ -48,4 +43,4 @@ for i in range(totalPossible):
 for a, b, c, d in storage:
 	print(a + "\t" + b + "\t" + c + "\t" + d) 
 
-print("percentage correct: " + str((counter/totalPossible) * 100) + "%") 
+print("percentage correct: " + str((counter/totalPossible) * 100) + "%" + "\t\t\t") 
