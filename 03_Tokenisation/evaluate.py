@@ -1,5 +1,5 @@
 
-
+from Levenshtein import ratio
 import sys
 import re
 
@@ -25,23 +25,27 @@ totalPossible = len(originals)
 storage = []
 
 counter = 0
+percentageCorrect = 0
 for i in range(totalPossible):
 
 	match = "no"
 	if re.match(results[i], target[i]):
 		counter += 1
 		match = "yes"
-	
-	
-	storage.append([originals[i],target[i],results[i],match])
+
+	correctRatio = ratio(results[i], target[i])
+	percentageCorrect += correctRatio
+
+	storage.append([originals[i],target[i],results[i],match, correctRatio])
 
 
-
-for a, b, c, d in storage:
+for a, b, c, d, e  in storage:
 	print("# text = " + a)
 	print("# predicted = " + b)
 	print("# actual = " + c)
 	print("# match = " + d)
+	print("# percent correct = %2.2f" %(e*100) + "%")
 	print( "\n") 
 
-print("percentage correct: " + str((counter/totalPossible) * 100) + "%" + "\t\t\t") 
+print("percentage of correct matches: " + str((counter/totalPossible) * 100) + "%") 
+print("overall correctness: %2.2f" %((percentageCorrect/totalPossible) * 100) + "%")
