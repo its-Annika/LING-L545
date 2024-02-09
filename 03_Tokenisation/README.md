@@ -19,7 +19,13 @@ Step 3: create dictionary.txt
 	cat tokenised.train.txt | gsed 's/ /\n/g' | sort | uniq > dictionary.txt
 
 
-Step 4: run the model and store the tokenized sentences in testing.results.txt
+Step 4: run the model and store the tokenized sentences in predicted.tokenisation.txt 
 
-	cat original.train.txt | python3 maxmatch.py > testing.results.txt
+	cat original.train.txt | python3 maxmatch.py > predicted.tokenisation.txt 
 
+
+Step 5: evaluate the model with evaluate.py and save the results in model.results.tsv
+
+	python3 evaluate.py > model.results.tsv
+
+	

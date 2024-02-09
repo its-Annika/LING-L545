@@ -4,7 +4,7 @@ import sys
 import re
 
 results = []
-with open ("testing.results.txt") as test:
+with open ("predicted.tokenisation.txt") as test:
 	for line in test:
 		results.append(line.strip())
 
