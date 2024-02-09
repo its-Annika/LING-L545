@@ -41,8 +41,8 @@ for i in range(totalPossible):
 
 for a, b, c, d, e  in storage:
 	print("# text = " + a)
-	print("# predicted = " + b)
-	print("# actual = " + c)
+	print("# actual = " + b)
+	print("# predicted = " + c)
 	print("# match = " + d)
 	print("# percent correct = %2.2f" %(e*100) + "%")
 	print( "\n") 
