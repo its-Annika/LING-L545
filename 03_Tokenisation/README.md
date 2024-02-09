@@ -1,4 +1,6 @@
-Step 1: give your .conllu file to makerOfFiles.py
+#Running the Model#
+
+####Step 1: give your .conllu file to makerOfFiles.py####
 	
 	cat x.conllu | python3 makerOfFiles.py
 
@@ -24,8 +26,8 @@ Step 4: run the model and store the tokenized sentences in predicted.tokenisatio
 	cat original.test.txt | python3 maxmatch.py > predicted.tokenisation.txt  
 
 
-Step 5: evaluate the model with evaluate.py and save the results in model.results.tsv
+Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
 
-	python3 evaluate.py > model.results.tsv
+	python3 evaluate.py > model.results.txt
 
 	

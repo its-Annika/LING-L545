@@ -24,16 +24,13 @@ with open("original.test.txt") as org:
 totalPossible = len(originals)
 storage = []
 
-storage.append(["original","actual","predicted","match?"])
-
-
 counter = 0
 for i in range(totalPossible):
 
-	match = "not a match"
+	match = "no"
 	if re.match(results[i], target[i]):
 		counter += 1
-		match = "match"
+		match = "yes"
 	
 	
 	storage.append([originals[i],target[i],results[i],match])
@@ -41,6 +38,10 @@ for i in range(totalPossible):
 
 
 for a, b, c, d in storage:
-	print(a + "\t" + b + "\t" + c + "\t" + d) 
+	print("# text = " + a)
+	print("# predicted = " + b)
+	print("# actual = " + c)
+	print("# match = " + d)
+	print( "\n") 
 
 print("percentage correct: " + str((counter/totalPossible) * 100) + "%" + "\t\t\t") 
