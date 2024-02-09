@@ -1,6 +1,6 @@
-#Running the Model#
+Running the Model
 
-####Step 1: give your .conllu file to makerOfFiles.py####
+Step 1: give your .conllu file to makerOfFiles.py
 	
 	cat x.conllu | python3 makerOfFiles.py
 
