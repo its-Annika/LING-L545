@@ -30,6 +30,11 @@ storage.append(["original","actual","predicted","match?"])
 counter = 0
 for i in range(totalPossible):
 
+	print(originals[i])
+	print(results[i])
+	print(target[i])
+	print("####")
+
 	match = "not a match"
 	if re.match(results[i], target[i]):
 		counter += 1

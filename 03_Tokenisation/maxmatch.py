@@ -34,4 +34,4 @@ def maxMatch(sentence, progress):
 
 
 for line in content:
-	print(maxMatch(line.strip(), "") + "\n")
+	print(maxMatch(line.strip(), ""))

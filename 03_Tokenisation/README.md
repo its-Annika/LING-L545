@@ -21,7 +21,7 @@ Step 3: create dictionary.txt
 
 Step 4: run the model and store the tokenized sentences in predicted.tokenisation.txt 
 
-	cat original.train.txt | python3 maxmatch.py > predicted.tokenisation.txt 
+	cat original.test.txt | python3 maxmatch.py > predicted.tokenisation.txt  
 
 
 Step 5: evaluate the model with evaluate.py and save the results in model.results.tsv
