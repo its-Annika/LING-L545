@@ -17,6 +17,7 @@ def maxMatch(sentence, progress):
                 return progress
 
         for i in range(len(sentence), 0, -1):
+
                 firstword = sentence[0:i]
                 remainder = sentence[i:]
 
