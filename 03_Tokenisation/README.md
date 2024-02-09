@@ -1,10 +1,12 @@
 Running the Model
+---------------------------------------------------------------------------
 
 Step 1: give your .conllu file to makerOfFiles.py
 	
 	cat <file name >.conllu | python3 makerOfFiles.py
 
 This will make the original.txt and tokenised.txt files.
+
 
 
 Step 2: create testing and training data
@@ -15,10 +17,19 @@ Step 2: create testing and training data
 	head -<80%> tokenised.txt > tokenised.train.txt
 	tail -<20%> tokenised.txt > tokenised.test.txt
 
+Find the percentages by finding the number of lines:
+	
+	cat original.txt | wc -l
+
+and taking 80%/20% respectively
+
+
+
 
 Step 3: create dictionary.txt
 
 	cat tokenised.train.txt | gsed 's/ /\n/g' | sort | uniq > dictionary.txt
+
 
 
 Step 4: run the model and store the tokenized sentences in predicted.tokenisation.txt 
@@ -26,14 +37,19 @@ Step 4: run the model and store the tokenized sentences in predicted.tokenisatio
 	cat original.test.txt | python3 maxmatch.py > predicted.tokenisation.txt  
 
 
+
 Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
 	
 	pip install levenshtein
 	python3 evaluate.py > model.results.txt
 
+
 	
 --------------------------------------------------------------------------------------------
+
+
 Model Match Accuracy: 4%
+------------------------------------------------------------------------------------------
 
 If only exact matches are considered, the model didn't perform well. Looking at the mismatches, there are at least two reasons 
 for this. 
@@ -72,8 +88,13 @@ Problem Area #2: Defaulting to the longest words possible
 	# percent correct = 91.94%
 
 maxMatch defaults to the longest word possible, meaning that long words are prioritized, (迪希邦登堡 instead of 迪 希 邦 登 堡).
+
+
 ----------------------------------------------------------------------------------------------------
+
+
 Model Edit Distance Accuracy: 94.19%
+---------------------------------------------------------------------------------------------------
 
 Despite the model's poor match performance, if correctness in terms of edit distance is considered, the model is overall accurate.
 Consider the following:
