@@ -41,6 +41,6 @@ for i in range(totalPossible):
 
 
 for a, b, c, d in storage:
-	print(a + "\t" + b + "\t" + c + "\t" + d + "\n") 
+	print(a + "\t" + b + "\t" + c + "\t" + d) 
 
-print("percentage correct: %2.2f percent" %(counter/totalPossible)) 
+print("percentage correct: " + str((counter/totalPossible) * 100) + "%") 
