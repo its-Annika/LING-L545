@@ -38,12 +38,9 @@ Step 4: run the model and store the tokenized sentences in predicted.tokenisatio
 
 
 
-Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
+Step 5: evaluate the model with evaluate.Tyers.py and save the results in model.results.txt
 	
-	pip install levenshtein
-	python3 evaluate.py > model.results.txt
-
-
+	python3 evaluate.Tyers.py predicted.tokenisation.txt tokenised.test.txt > model.results.txt
 	
 --------------------------------------------------------------------------------------------
 Model Match Accuracy: 4%
