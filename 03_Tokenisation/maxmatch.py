@@ -1,7 +1,9 @@
 import sys
 
+dictFile = sys.argv[1]
+
 dict = []
-with open ("dictionary.txt") as dicti:
+with open (dictFile) as dicti:
 	for line in dicti:
 		dict.append(line.strip())
 
