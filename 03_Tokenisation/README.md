@@ -122,7 +122,7 @@ B) Chinese OOV Items
 	HYP: 在 這 條 信息 裡 ， 前    司 法 部 部長 譴  責   布 里 斯 · 奧    爾 特 弗 是 一 個 “ 法   西 斯 分子 ” 、 “ 愚蠢 內  政 部長 ” 和 一 個 ” 暴  徒 “ 。 
 	EVA:              S    I I I    S  S   I I I   S    I I I         S   I I             S  I              S  I     
 
-If a comination of characters doesn't appear in the dictionary, maxmatch outputs said characters individualy (流程 -> 流 程, 講話 -> 講 話, 監督-> 監 督, ...). If more than a few OOV items occur in the same sentence, the resulting WER is very high:
+If a combination of characters doesn't appear in the dictionary, maxmatch outputs said characters individualy (流程 -> 流 程, 講話 -> 講 話, 監督-> 監 督, ...). If more than a few OOV items occur in the same sentence, the resulting WER is very high:
 
 	WER: 111.11%
 	REF: 費德里克      · 費里尼     曾經 說 過 ： “ 小丑 之於 人性       就 如同 影子 之於 常人         。 ” 
@@ -139,7 +139,9 @@ If a comination of characters doesn't appear in the dictionary, maxmatch outputs
 	之於 -> 之 於
 	常人 -> 常 人
  
+-------------------------------------------------------------------------------------------
 
+Given that the model's main issue is OOV, in order to improve the model, I would provide it with a larger dictionary. I would also change the maxMatch function to keep strings of numbers as one word, even if they don't appear in the dictionary (possibly strings of latin-alphabet characters too). 
 
 
 
