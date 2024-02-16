@@ -1,7 +1,7 @@
-Running the Model
+# Running the Model
 ---------------------------------------------------------------------------
 
-Step 1: give your .conllu file to makerOfFiles.py
+### Step 1: give your .conllu file to makerOfFiles.py
 	
 	cat <file name >.conllu | python3 makerOfFiles.py
 
@@ -43,7 +43,7 @@ Step 5: evaluate the model with evaluate.py and save the results in model.result
 	python3 evaluate.py tokenised.test.txt output.test.txt > model.results.txt
 	
 --------------------------------------------------------------------------------------------
-# of Sentences = 200, WER = 50.84%
+# Number of Sentences = 200, WER = 50.84%
 
 
 Overall, the model performed decently; not extremely well but also not extremely poor.  
