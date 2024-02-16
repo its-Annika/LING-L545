@@ -142,7 +142,7 @@ If a combination of characters doesn't appear in the dictionary, maxmatch output
  
 -------------------------------------------------------------------------------------------
 
-Given that the model's main issue is OOV, in order to improve the model, I would provide it with a larger dictionary. I would also change the maxMatch function to keep strings of numbers as one word, even if they don't appear in the dictionary (possibly strings of latin-alphabet characters too). 
+Given that the model's main issue are OOV items, in order to improve the model, I would provide it with a larger dictionary. I would also change the maxMatch function to keep strings of numbers as one word, even if they don't appear in the dictionary (possibly strings of latin-alphabet characters too). 
 
 
 
