@@ -38,13 +38,13 @@ Step 4: run the model and store the tokenized sentences in output.test.txt
 
 
 
-Step 5: evaluate the model with evaluate.Tyers.py and save the results in model.results.txt
+Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
 	
 	python3 evaluate.py tokenised.test.txt output.test.txt > model.results.txt
 	
 --------------------------------------------------------------------------------------------
 # of Sentences = 200, WER = 50.84%
-------------------------------------------------------------------------------------------
+
 
 Overall, the model performed decently; not extremely well but also not extremely poor.  
 
@@ -76,9 +76,8 @@ The model did achieve a WER of 0% for 8/200 sentences, a few of which can be see
 
 The sentences which were correctly predicted are on the shorter side, and likely don't contain any OOV items
 
+---------------------------------------------------------------------------------------------------------
  
-
-
 The major issue for this model is OOV items.
 
 A) Number/English-Word OOV Items 
