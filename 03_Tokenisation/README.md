@@ -81,7 +81,7 @@ The sentences which were correctly predicted are on the shorter side, and likely
  
 The major issue for this model is OOV items.
 
-### A) Number/English-Word OOV Items 
+### Number/English-Word OOV Items 
 	
 	WER: 109.52%
 	REF: 德國 Obermarsberg                       具有 歷史性   的 市政廳     建 於 13   世紀 ， 並 在 三十   年 戰爭 後 進行 了 修補   。 
@@ -104,7 +104,7 @@ The major issue for this model is OOV items.
 maxMatch doesn't acount for OOV items (especially if they aren't Chinese characters), instead they are outputed as a series of one character words (Obermarsberg -> O b e r m a r s b e r g, 13 -> 1 3, 1927 -> 19 27, 25 -> 2 5).
 
 
-### B) Chinese OOV Items
+### Chinese OOV Items
 
 	WER: 61.54%
 	REF: 根據 流程   ， 她 將 會 在 23   點 45   分 講話   。 
