@@ -1,5 +1,5 @@
 # Running the Model
----------------------------------------------------------------------------
+
 
 ### Step 1: give your .conllu file to makerOfFiles.py
 	
@@ -9,7 +9,7 @@ This will make the original.txt and tokenised.txt files.
 
 
 
-Step 2: create testing and training data
+### Step 2: create testing and training data
 
 	head -<80%> original.txt > original.train.txt
 	tail -<20%> original.txt > original.test.txt
@@ -26,23 +26,24 @@ and taking 80%/20% respectively
 
 
 
-Step 3: create dictionary.txt
+### Step 3: create dictionary.txt
 
 	cat tokenised.train.txt | gsed 's/ /\n/g' | sort | uniq > dictionary.txt
 
 
 
-Step 4: run the model and store the tokenized sentences in output.test.txt 
+### Step 4: run the model and store the tokenized sentences in output.test.txt 
 
 	cat original.test.txt | python maxmatch.py dictionary.txt > output.test.txt  
 
 
 
-Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
+### Step 5: evaluate the model with evaluate.py and save the results in model.results.txt
 	
 	python3 evaluate.py tokenised.test.txt output.test.txt > model.results.txt
 	
 --------------------------------------------------------------------------------------------
+
 # Number of Sentences = 200, WER = 50.84%
 
 
@@ -76,11 +77,11 @@ The model did achieve a WER of 0% for 8/200 sentences, a few of which can be see
 
 The sentences which were correctly predicted are on the shorter side, and likely don't contain any OOV items
 
----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
  
 The major issue for this model is OOV items.
 
-A) Number/English-Word OOV Items 
+### A) Number/English-Word OOV Items 
 	
 	WER: 109.52%
 	REF: 德國 Obermarsberg                       具有 歷史性   的 市政廳     建 於 13   世紀 ， 並 在 三十   年 戰爭 後 進行 了 修補   。 
@@ -103,7 +104,7 @@ A) Number/English-Word OOV Items
 maxMatch doesn't acount for OOV items (especially if they aren't Chinese characters), instead they are outputed as a series of one character words (Obermarsberg -> O b e r m a r s b e r g, 13 -> 1 3, 1927 -> 19 27, 25 -> 2 5).
 
 
-B) Chinese OOV Items
+### B) Chinese OOV Items
 
 	WER: 61.54%
 	REF: 根據 流程   ， 她 將 會 在 23   點 45   分 講話   。 
