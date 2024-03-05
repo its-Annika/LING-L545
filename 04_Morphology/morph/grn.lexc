@@ -1,0 +1,39 @@
+Multichar_Symbols
+
+%>                   ! Morpheme boundary
+%<n%>                ! Noun
+%<pl%>               ! Plural
+%<sg%>   	     ! Singular
+%<akk%>              ! Akkusativ
+%<{m%}%>	     ! multichar
+
+
+
+LEXICON Root
+Nouns ;
+
+
+
+LEXICON M
+%<n%>%<pl%>:%>e #; ! "plural"
+%<n%>%<sg%>:%> #; ! "singular"
+
+
+
+LEXICON F
+%<n%>%<pl%>:%>er #; ! "plural"
+%<n%>%<sg%>:%> #; ! "singular"
+
+
+
+LEXICON N
+%<n%>%<pl%>:%>en #; ! "plural"
+%<n%>%<sg%>:%> #; ! "singular"
+
+
+
+LEXICON Nouns
+Hund:Hund M ; ! "dog"
+Kind:Kind F ; ! "child"
+Wohnung:Wohnung N ; ! "apartment"
+
