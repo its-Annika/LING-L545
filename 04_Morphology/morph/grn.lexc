@@ -4,36 +4,50 @@ Multichar_Symbols
 %<n%>                ! Noun
 %<pl%>               ! Plural
 %<sg%>   	     ! Singular
-%<akk%>              ! Akkusativ
 %<{m%}%>	     ! multichar
-
-
 
 LEXICON Root
 Nouns ;
 
+LEXICON CASE
+%<gen%>:%>s #;   !"genitive"                  "really s or es"
+%<akk%>:%>en #;  !"akkusitive"                "really n or en"
 
+LEXICON SUBST
+%<-ship%>:%>schaff #;   !"ship or hood"
+%<dim%>:%>chen #;   !"diminuative"            "Umlaut!"
+%<dim2%>:%>lein #;   !"diminuative"           "Umlaut!"
 
-LEXICON M
-%<n%>%<pl%>:%>e #; ! "plural"
-%<n%>%<sg%>:%> #; ! "singular"
+LEXICON PL1
+%<n%>%<pl%>:%>e #;   !"plural"
+%<n%>%<sg%>:%> #;   !"singular"
 
+LEXICON PL2
+%<n%>%<pl%>:%> #;   !"plural"
+%<n%>%<sg%>:%> #;   !"singular" 
 
+LEXICON PL3
+%<n%>%<pl%>:%>s #;   !"plural"
+%<n%>%<sg%>:%> #;   !"singular"
 
-LEXICON F
-%<n%>%<pl%>:%>er #; ! "plural"
-%<n%>%<sg%>:%> #; ! "singular"
+LEXICON PL4
+%<n%>%<pl%>:%>er #;   !"plural"                "Umlaut!"
+%<n%>%<sg%>:%> #;   !"singular"
 
+LEXICON PL5
+%<n%>%<pl%>:%>e #;   !"plural"                 "Umlaut!"
+%<n%>%<sg%>:%> #;   !"singular"
 
-
-LEXICON N
-%<n%>%<pl%>:%>en #; ! "plural"
-%<n%>%<sg%>:%> #; ! "singular"
-
-
+LEXICON PL6
+%<n%>%<pl%>:%>en #;   !"plural"                 "e or en"
+%<n%>%<sg%>:%> #;   !"singular"
 
 LEXICON Nouns
-Hund:Hund M ; ! "dog"
-Kind:Kind F ; ! "child"
-Wohnung:Wohnung N ; ! "apartment"
-
+Hund:Hund PL1 ;   !"dog"
+Freund:Freund PL1 ;   !"friend"
+Löffel:Löffel PL2 ;   !"spoon"
+Kino:Kino PL3 ;   !"movie theater"
+Kind:Kind PL4 ;   !"child"
+Wand:Wand PL5 ;   !"wall"
+Wohnung:Wohnung PL6 ;   !"apartment"
+Katze:Katze PL6 ;  !"cat"
