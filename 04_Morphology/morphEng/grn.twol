@@ -27,4 +27,4 @@ Rules
 %{n%}:n <=> n: %>: _ ;
 
 "delete vowels"
-[o:0|e:0|a:0|i:0|u:0] <=> _ [ist] ; 
+[o:0|e:0|a:0|i:0|u:0] <=> _ %>: i: s: t: ; 
