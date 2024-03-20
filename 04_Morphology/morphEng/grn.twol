@@ -1,0 +1,24 @@
+Alphabet
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+%{m%}:e
+%{m%}:0
+
+;
+
+Sets
+
+vw = A E I O U
+     a e i o u ;
+
+cns = b c d f g h j k l m n p q r s t v w x z
+      B C D F G H J K L M N P Q R S T V W X Z ;
+
+Rules 
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+"suffixes contain e only after consonants"
+%{m%}:0 <=> e: %>: _ ;	
+

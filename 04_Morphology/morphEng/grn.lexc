@@ -1,0 +1,42 @@
+Multichar_Symbols
+
+%>                   ! Morpheme boundary
+%<n%>                ! noun
+%<pl%>               ! Plural
+%<sg%>               ! Singular
+%{m%}                ! multichar
+%<personwho%>        ! do-er      
+%<poss%>             ! possesive
+
+LEXICON Root
+Nouns ;
+
+LEXICON N-REG
+%<n%>%<pl%>: %>s # ;
+%<n%>%<sg%>: %> # ;
+
+LEXICON N-IREG1
+%<n%>%<pl%>: %>es # ;
+%<n%>%<sg%>: %> # ;
+
+!LEXICON POSS
+!%<n%>%<sg%>%<poss%>: %> %'s # ;
+!%<n%>%<pl%>%<poss%>: %> %' # ;
+
+LEXICON DOER
+%<n%>%<sg%>%<personwho%>: %>%{m%}r # ;
+%<n%>%<pl%>%<personwho%>: %>%{m%}rs # ;
+
+
+LEXICON Nouns
+dance:dance N-REG ;
+dance:dance DOER ;
+!dance:dance POSS;
+
+box:box N-IREG1 ;
+box:box DOER ;
+!box:box POSS ;
+
+walk:walk N-REG ;
+walk:walk DOER ;
+!walk:walk POSS ;
