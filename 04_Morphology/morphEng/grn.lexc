@@ -1,3 +1,4 @@
+
 Multichar_Symbols
 
 %>                   ! Morpheme boundary
@@ -8,85 +9,94 @@ Multichar_Symbols
 %{n%}                ! multichar
 %{a%}                ! multichar
 %<personwho%>        ! do-er      
+%<peoplewho%>        ! do-er
 %<poss%>             ! possesive
-
+%<class%>	     ! -doom
+%<-dom%>             ! -dom
 
 LEXICON Root
 Nouns ;
 
 LEXICON N-REG
-%<n%>%<pl%>: %>s # ;
-%<n%>%<sg%>: %> # ;
+%<n%>%<pl%>:%>s POSS-P2 ;
+%<n%>%<sg%>:%> POSS-S ;
 
 LEXICON N-IREG1
-%<n%>%<pl%>: %>es # ;
-%<n%>%<sg%>: %> # ;
+%<n%>%<pl%>:%>es POSS-P2 ;
+%<n%>%<sg%>:%> POSS-S ;
 
 LEXICON N-VOWEL-SG
-%<n%>%<sg%>: %> # ;
+%<n%>%<sg%>:%> POSS-S ;
 
 LEXICON N-VOWEL-PL
-%<n%>%<pl%>: %> # ;
+%<n%>%<pl%>:%> POSS-P ;
 
 LEXICON N-UNMARKED
-%<n%>%<pl%>: %> # ;
-%<n%>%<sg%>: %> # ;
+%<n%>%<pl%>:%> POSS-P ;
+%<n%>%<sg%>:%> POSS-S ;
 
-!LEXICON POSS
-!%<n%>%<sg%>%<poss%>: %> 's # ;
-!%<n%>%<pl%>%<poss%>: %> ' # ;
+LEXICON DOM
+%<n%>%<sg%>%<-dom%>:%>dom # ; 
+
+LEXICON CLASS
+%<n%>%<sg%>%<class%>:%>hood # ; 
+
+LEXICON CLASS2
+%<n%>%<sg%>%<class%>:%>ship # ;
+
+LEXICON POSS-S
+%<poss%>:%>'s # ;
+
+LEXICON POSS-P
+%<poss%>:%>'s # ;
+
+LEXICON POSS-P2
+%<poss%>:%>' # ;
 
 LEXICON DOER
-%<n%>%<sg%>%<personwho%>: %>%{m%}r # ;
-%<n%>%<pl%>%<personwho%>: %>%{m%}rs # ;
-
-LEXICON DOER2
-%<n%>%<sg%>%<personwho%>: %>%{n%}er # ;
-%<n%>%<pl%>%<personwho%>: %>%{n%}ers # ;
-
-LEXICON DOER3
-%<n%>%<sg%>%<personwho%>: %>%ist # ;
-%<n%>%<pl%>%<personwho%>: %>%ists # ;
+%<n%>%<sg%>%<personwho%>:%>%ist # ;
+%<n%>%<pl%>%<peoplewho%>:%>%ists # ;
 
 LEXICON Nouns
-dance:dance N-REG ;
-dance:dance DOER ;
-!dance:dance POSS;
-
-box:box N-IREG1 ;
-box:box DOER ;
-!box:box POSS ;
-
-walk:walk N-REG ;
-walk:walk DOER ;
-!walk:walk POSS ;
-
-run:run N-REG ;
-run:run DOER2 ; 
-
-swim:swim N-REG ;
-swim:swim DOER2 ;
-
 goose:goose N-VOWEL-SG ;
 goose:geese N-VOWEL-PL ;
-
-foot:foot N-VOWEL-SG ;
-foot:feet N-VOWEL-PL ;
 
 tooth:tooth N-VOWEL-SG ;
 tooth:teeth N-VOWEL-PL;
 
 tour:tour N-REG ;
-tour:tour DOER3 ;
+tour:tour DOER ;
+tour:tour POSS ;
 
-art:art N-UNMARKED ;
-art:art DOER3 ;
+!art
 
 piano:piano N-REG ;
-piano:piano DOER3 ;
+piano:piano DOER ;
 
 violin:violin N-REG ;
-violin:violin DOER3;
+violin:violin DOER ;
 
-bicyle:bicyle N-REG ;
-bicyle:bicyle DOER3 ;
+bicycle:bicycle N-REG ;
+bicycle:bicycle DOER ;
+
+knight:knight N-REG ;
+knigth:kight CLASS ;
+
+neighbour:neighbour N-REG ;
+neighbour:neighbour CLASS ;
+
+friend:friend N-REG ;
+friend:friend CLASS2 ;
+
+fellow:fellow N-REG ;
+fellow:fellow CLASS2 ;
+
+woman:woman N-VOWEL-SG ;
+woman:women N-VOWEL-PL ;
+
+man:man N-VOWEL-SG ;
+man:men N-VOWEL-PL ;
+
+king:king N-REG ;
+king:king DOM ;
+
