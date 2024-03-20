@@ -5,6 +5,24 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ä Ë Ö Ü ß
 a b c d e f g h i j k l m n o p q r s t u v w x y z ä ë ö ü
 
 %{m%}:e
-
+%{m%}:0
 ;
 
+Sets
+
+vs = a e i o u 
+	 A E I U O
+	 Ä Ë Ö Ü
+    	 ä ë ö ü ;
+
+cns = b c d f g h j k l m p q r s t v w x z
+	     B C D F G H J K L M P Q R S T V W X Z ;
+
+Rules
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+"Remove [e] in suffixes if following a vowel"
+%{m%}:0 <=> l %> _ ;
+	   

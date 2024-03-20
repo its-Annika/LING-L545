@@ -4,23 +4,36 @@ Multichar_Symbols
 %<n%>                ! Noun
 %<pl%>               ! Plural
 %<sg%>   	     ! Singular
-%<{m%}%>	     ! multichar
+%<gen%>              ! possesive
+%<akk%>              ! akkusative
+%<dat%>              ! dative
+%<nom%>              ! nominative
+%{m%}                ! multichar
 
 LEXICON Root
 Nouns ;
 
-LEXICON CASE
-%<gen%>:%>s #;   !"genitive"                  "really s or es"
-%<akk%>:%>en #;  !"akkusitive"                "really n or en"
+LEXICON NEVER-MARKED-CASE
+%<sg%>%<nom%>: %> #;
+%<sg%>%<akk%> : %> #;
 
-LEXICON SUBST
-%<-ship%>:%>schaff #;   !"ship or hood"
+LEXICON UNMARKED-CASE
+%<gen%>: %> #;
+%<dat%>: %> #;
+
+LEXICON MARKED-CASE
+%<gen%>:%>%{m%}s #;   !"genitive"               
+%<dat%>:%>%{m%}n #;   !"dative"
+
+LEXICON DIM
 %<dim%>:%>chen #;   !"diminuative"            "Umlaut!"
-%<dim2%>:%>lein #;   !"diminuative"           "Umlaut!"
+
+LEXICON HOOD
+%<-ship%>:%>schaff #;   !"ship or hood"
 
 LEXICON PL1
-%<n%>%<pl%>:%>e #;   !"plural"
-%<n%>%<sg%>:%> #;   !"singular"
+%<n%>%<pl%>:%>e # ;   !"plural"
+%<n%>%<sg%>:%> # ;   !"singular"
 
 LEXICON PL2
 %<n%>%<pl%>:%> #;   !"plural"
@@ -39,15 +52,44 @@ LEXICON PL5
 %<n%>%<sg%>:%> #;   !"singular"
 
 LEXICON PL6
-%<n%>%<pl%>:%>en #;   !"plural"                 "e or en"
+%<n%>%<pl%>:%>%{m%}n #;   !"plural"                 "e or en"
 %<n%>%<sg%>:%> #;   !"singular"
 
+
+
 LEXICON Nouns
+
 Hund:Hund PL1 ;   !"dog"
+Hund:Hund MARKED-CASE ;
+Hund:Hund NEVER-MARKED-CASE ;
+Hund:Hund DIM ;
+
 Freund:Freund PL1 ;   !"friend"
+Freund:Freund MARKED-CASE ;
+Freund:Freund NEVER-MARKED-CASE;
+Fruend:Freund HOOD ;
+
 Löffel:Löffel PL2 ;   !"spoon"
+Löffel:Löffel MARKED-CASE ;
+Löffel:Löffel NEVER-MARKED-CASE;  
+
 Kino:Kino PL3 ;   !"movie theater"
+Kino:Kino MARKED-CASE ;
+Kino:Kino NEVER-MARKED-CASE; 
+
 Kind:Kind PL4 ;   !"child"
+Kind:Kind MARKED-CASE ;
+Kind:Kind NEVER-MARKED-CASE;
+
 Wand:Wand PL5 ;   !"wall"
+Wand:Wand UNMARKED-CASE ;
+Wand:Wand NEVER-MARKED-CASE;
+
 Wohnung:Wohnung PL6 ;   !"apartment"
+Wohnung:Wohnung UNMARKED-CASE ;
+Wohnung:Wohnung NEVER-MARKED-CASE;
+
 Katze:Katze PL6 ;  !"cat"
+Katze:Katze UNMARKED-CASE ;
+Katze:Katze NEVER-MARKED-CASE ;
+Katze:Katze DIM ;

@@ -5,8 +5,11 @@ Multichar_Symbols
 %<pl%>               ! Plural
 %<sg%>               ! Singular
 %{m%}                ! multichar
+%{n%}                ! multichar
+%{a%}                ! multichar
 %<personwho%>        ! do-er      
 %<poss%>             ! possesive
+
 
 LEXICON Root
 Nouns ;
@@ -19,14 +22,31 @@ LEXICON N-IREG1
 %<n%>%<pl%>: %>es # ;
 %<n%>%<sg%>: %> # ;
 
+LEXICON N-VOWEL-SG
+%<n%>%<sg%>: %> # ;
+
+LEXICON N-VOWEL-PL
+%<n%>%<pl%>: %> # ;
+
+LEXICON N-UNMARKED
+%<n%>%<pl%>: %> # ;
+%<n%>%<sg%>: %> # ;
+
 !LEXICON POSS
-!%<n%>%<sg%>%<poss%>: %> %'s # ;
-!%<n%>%<pl%>%<poss%>: %> %' # ;
+!%<n%>%<sg%>%<poss%>: %> 's # ;
+!%<n%>%<pl%>%<poss%>: %> ' # ;
 
 LEXICON DOER
 %<n%>%<sg%>%<personwho%>: %>%{m%}r # ;
 %<n%>%<pl%>%<personwho%>: %>%{m%}rs # ;
 
+LEXICON DOER2
+%<n%>%<sg%>%<personwho%>: %>%{n%}er # ;
+%<n%>%<pl%>%<personwho%>: %>%{n%}ers # ;
+
+LEXICON DOER3
+%<n%>%<sg%>%<personwho%>: %>%ist # ;
+%<n%>%<pl%>%<personwho%>: %>%ists # ;
 
 LEXICON Nouns
 dance:dance N-REG ;
@@ -40,3 +60,33 @@ box:box DOER ;
 walk:walk N-REG ;
 walk:walk DOER ;
 !walk:walk POSS ;
+
+run:run N-REG ;
+run:run DOER2 ; 
+
+swim:swim N-REG ;
+swim:swim DOER2 ;
+
+goose:goose N-VOWEL-SG ;
+goose:geese N-VOWEL-PL ;
+
+foot:foot N-VOWEL-SG ;
+foot:feet N-VOWEL-PL ;
+
+tooth:tooth N-VOWEL-SG ;
+tooth:teeth N-VOWEL-PL;
+
+tour:tour N-REG ;
+tour:tour DOER3 ;
+
+art:art N-UNMARKED ;
+art:art DOER3 ;
+
+piano:piano N-REG ;
+piano:piano DOER3 ;
+
+violin:violin N-REG ;
+violin:violin DOER3;
+
+bicyle:bicyle N-REG ;
+bicyle:bicyle DOER3 ;
