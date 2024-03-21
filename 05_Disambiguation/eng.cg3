@@ -1,0 +1,73 @@
+DELIMITERS = "." ;
+
+LIST Prop = np ;
+LIST Adj = adj ;
+LIST Unlike = "unlike" ;
+LIST Pro = pr ;
+LIST Cnjadv = cnjadv ;
+LIST N = n ;
+LIST Vbser = vbser ;
+LIST Pp = pp ;
+LIST Adv = adv ;
+LIST Pr = pr ;
+LIST Past = past ;
+LIST Abbr = abbr ;
+LIST Lpar = lpar ;
+LIST Prn = prn ;
+LIST Itg = itg ;
+LIST Rel = rel ;
+LIST P3 = p3 ;
+LIST Adj = adj ;
+LIST Ger = ger ;
+LIST Det = det ;
+LIST Num = num ;
+LIST Pprs = pprs ;
+LIST Mf = mf;
+
+SECTION
+
+# Remove the adjective reading of "unlike" if it is 
+# followed by a proper noun
+REMOVE Adj IF (0 Unlike) (1 Prop) ; 
+  # ... unlike Livy ...
+
+# prepositions after nouns
+REMOVE Cnjadv IF (-1 N) ;
+
+# past participle if after vbser 
+REMOVE Past IF (NEGATE -1 Vbser BARRIER (*) - Adv) ;
+
+# prepositions before nouns
+REMOVE Adv IF (1 N or Prop) ;
+
+# nouns before circa
+SELECT N if (-1 Lpar) (1 Abbr) ;
+
+# prn itg before verbs
+SELECT Rel if (1 Vbser) ;
+
+# 3rd person if after ref 
+SELECT P3 if (-1 Rel) ;
+
+# remove adj if not before a n or adj 
+REMOVE Adj if (not 1 N or Adj) ;
+
+# gerund after vbser
+SELECT Ger if (-1 Vbser BARRIER (*) - Adv) ;
+
+# determiner before numbers or nouns
+SELECT Det if (1 Num or N or Prop) ;
+
+# not a proper noun before another noun
+REMOVE Prop if (1 N or Prop) ;
+
+# present participle before prepositions or dets
+SELECT Pprs if (1 Pr or Det) ;
+
+#remove mf cause English doesn't use it
+REMOVE Mf ;
+
+#select noun after adj
+SELECT N if (-1 Adj) ;
+
+SELECT Prop if (-1 Adj) ;
