@@ -21,10 +21,10 @@ while line:
 		if token[-1] in '!?':
 			sys.stdout.write(token + '\n')
 
-		elif token[-1] == ".":
+		elif token[-1] == '.':
 
 			#abreviations, elipsis, and initials 
-			if token in ["D.C.", "ca.", "...", "Mio.", "St.", "Okd."] or re.match("[A-Z][\.]", token):
+			if token in ["D.C.", "ca.", "...", "Mio.", "St.", "Okd.", "No.", "Numbere"] or re.match("[A-Z][\.]", token):
 				sys.stdout.write(token + ' ')
 
 			#dates & numbers
